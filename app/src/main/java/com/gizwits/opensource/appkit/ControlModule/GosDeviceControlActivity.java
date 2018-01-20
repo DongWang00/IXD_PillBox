@@ -196,7 +196,7 @@ public class GosDeviceControlActivity extends GosControlModuleBaseActivity
 			switch (msg.what) {
 				case MSG_ONE:
 					checkTime();
-					checkLidState();
+
 					break;
 				default:
 					break;
@@ -249,7 +249,7 @@ public class GosDeviceControlActivity extends GosControlModuleBaseActivity
 		my_intent = new Intent(this.context, Alarm_Receiver.class);
 		now = Calendar.getInstance();
 
-		LidState = 0;
+		LidState = 2;
 		remainingPack = 0;
 		totalPack = -1;
 		dosingTime = "";
@@ -352,6 +352,7 @@ public class GosDeviceControlActivity extends GosControlModuleBaseActivity
 								+"0"+s_clock5.substring(0,1)+"0"+s_clock5.substring(1,2)
 								+"0"+s_clock5.substring(3,4)+"0"+s_clock5.substring(4,5);
 						sendCommand(KEY_DOSING_TIME, HexStrUtils.hexStringToBytes(s_clock));
+						data_Dosing_Time = HexStrUtils.hexStringToBytes(s_clock);
 						break;
 					case R.id.option2:
 						option = 2;
@@ -385,6 +386,7 @@ public class GosDeviceControlActivity extends GosControlModuleBaseActivity
 								+"0"+s_clock5.substring(0,1)+"0"+s_clock5.substring(1,2)
 								+"0"+s_clock5.substring(3,4)+"0"+s_clock5.substring(4,5);
 						sendCommand(KEY_DOSING_TIME, HexStrUtils.hexStringToBytes(s_clock));
+						data_Dosing_Time = HexStrUtils.hexStringToBytes(s_clock);
 						break;
 					case R.id.option3:
 						option = 3;
@@ -415,6 +417,7 @@ public class GosDeviceControlActivity extends GosControlModuleBaseActivity
 								+"0"+s_clock5.substring(0,1)+"0"+s_clock5.substring(1,2)
 								+"0"+s_clock5.substring(3,4)+"0"+s_clock5.substring(4,5);
 						sendCommand(KEY_DOSING_TIME, HexStrUtils.hexStringToBytes(s_clock));
+						data_Dosing_Time = HexStrUtils.hexStringToBytes(s_clock);
 						break;
 					case R.id.option4:
 						option = 4;
@@ -442,6 +445,7 @@ public class GosDeviceControlActivity extends GosControlModuleBaseActivity
 								+"0"+s_clock5.substring(0,1)+"0"+s_clock5.substring(1,2)
 								+"0"+s_clock5.substring(3,4)+"0"+s_clock5.substring(4,5);
 						sendCommand(KEY_DOSING_TIME, HexStrUtils.hexStringToBytes(s_clock));
+						data_Dosing_Time = HexStrUtils.hexStringToBytes(s_clock);
 						break;
 					case R.id.option5:
 						option = 5;
@@ -512,6 +516,7 @@ public class GosDeviceControlActivity extends GosControlModuleBaseActivity
 								+"0"+s_clock5.substring(0,1)+"0"+s_clock5.substring(1,2)
 								+"0"+s_clock5.substring(3,4)+"0"+s_clock5.substring(4,5);
 						sendCommand(KEY_DOSING_TIME, HexStrUtils.hexStringToBytes(s_clock));
+						data_Dosing_Time = HexStrUtils.hexStringToBytes(s_clock);
 					}
 				}).setNegativeButton("取消", new DialogInterface.OnClickListener() {
 					@Override
@@ -565,6 +570,7 @@ public class GosDeviceControlActivity extends GosControlModuleBaseActivity
 								+"0"+s_clock5.substring(0,1)+"0"+s_clock5.substring(1,2)
 								+"0"+s_clock5.substring(3,4)+"0"+s_clock5.substring(4,5);
 						sendCommand(KEY_DOSING_TIME, HexStrUtils.hexStringToBytes(s_clock));
+						data_Dosing_Time = HexStrUtils.hexStringToBytes(s_clock);
 					}
 				}).setNegativeButton("取消", new DialogInterface.OnClickListener() {
 					@Override
@@ -618,6 +624,7 @@ public class GosDeviceControlActivity extends GosControlModuleBaseActivity
 								+"0"+s_clock5.substring(0,1)+"0"+s_clock5.substring(1,2)
 								+"0"+s_clock5.substring(3,4)+"0"+s_clock5.substring(4,5);
 						sendCommand(KEY_DOSING_TIME, HexStrUtils.hexStringToBytes(s_clock));
+						data_Dosing_Time = HexStrUtils.hexStringToBytes(s_clock);
 					}
 				}).setNegativeButton("取消", new DialogInterface.OnClickListener() {
 					@Override
@@ -671,6 +678,7 @@ public class GosDeviceControlActivity extends GosControlModuleBaseActivity
 								+"0"+s_clock5.substring(0,1)+"0"+s_clock5.substring(1,2)
 								+"0"+s_clock5.substring(3,4)+"0"+s_clock5.substring(4,5);
 						sendCommand(KEY_DOSING_TIME, HexStrUtils.hexStringToBytes(s_clock));
+						data_Dosing_Time = HexStrUtils.hexStringToBytes(s_clock);
 					}
 				}).setNegativeButton("取消", new DialogInterface.OnClickListener() {
 					@Override
@@ -724,6 +732,7 @@ public class GosDeviceControlActivity extends GosControlModuleBaseActivity
 								+"0"+s_clock5.substring(0,1)+"0"+s_clock5.substring(1,2)
 								+"0"+s_clock5.substring(3,4)+"0"+s_clock5.substring(4,5);
 						sendCommand(KEY_DOSING_TIME, HexStrUtils.hexStringToBytes(s_clock));
+						data_Dosing_Time = HexStrUtils.hexStringToBytes(s_clock);
 					}
 				}).setNegativeButton("取消", new DialogInterface.OnClickListener() {
 					@Override
@@ -1183,6 +1192,7 @@ public class GosDeviceControlActivity extends GosControlModuleBaseActivity
 		case R.id.et_data_Remaining_Pack:
 			et_data_Remaining_Pack.setCursorVisible(false);
 			sendCommand(KEY_REMAINING_PACK, Integer.valueOf(v.getText().toString()));
+			data_Remaining_Pack = Integer.valueOf(v.getText().toString());
 			break;
 		default:
 			break;
@@ -1273,7 +1283,7 @@ public class GosDeviceControlActivity extends GosControlModuleBaseActivity
 			s_clock4 = clock4.getText().toString();
 			s_clock5 = clock5.getText().toString();
 		}
-
+		checkLidState();
 	}
 
 	private void setEditText(EditText et, Object value) {

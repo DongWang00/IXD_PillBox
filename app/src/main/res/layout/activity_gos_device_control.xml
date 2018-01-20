@@ -416,18 +416,6 @@
 				android:background="@color/white"
 				android:visibility="gone">
 
-				<Switch
-					android:id="@+id/switch1"
-					android:layout_width="wrap_content"
-					android:layout_height="100dp"
-					android:layout_alignParentBottom="false"
-					android:layout_alignParentEnd="false"
-					android:layout_alignParentRight="true"
-					android:layout_below="@+id/hint1"
-					android:checked="false"
-					android:paddingRight="10dp"
-					android:textColor="#77FFF7" />
-
 				<TextView
 					android:id="@+id/hint1"
 					android:layout_width="match_parent"
@@ -451,6 +439,18 @@
 					android:text="00:00"
 					android:textColor="#464646"
 					android:textSize="55sp" />
+
+				<Switch
+					android:id="@+id/switch1"
+					android:layout_width="wrap_content"
+					android:layout_height="100dp"
+					android:layout_alignParentBottom="false"
+					android:layout_alignParentEnd="false"
+					android:layout_alignParentRight="true"
+					android:layout_below="@+id/hint1"
+					android:checked="false"
+					android:paddingRight="10dp"
+					android:textColor="#77FFF7" />
 
 			</RelativeLayout>
 
@@ -509,6 +509,18 @@
 				android:visibility="gone">
 
 				<TextView
+					android:id="@+id/hint3"
+					android:layout_width="match_parent"
+					android:layout_height="50dp"
+					android:layout_centerVertical="false"
+					android:background="#6192FF"
+					android:gravity="center"
+					android:text="本次服药"
+					android:textColor="#ffffff"
+					android:textSize="18sp"
+					android:visibility="gone" />
+
+				<TextView
 					android:id="@+id/alarm3"
 					android:layout_width="wrap_content"
 					android:layout_height="100dp"
@@ -532,18 +544,6 @@
 					android:paddingRight="10dp"
 					android:textColor="#77FFF7" />
 
-				<TextView
-					android:id="@+id/hint3"
-					android:layout_width="match_parent"
-					android:layout_height="50dp"
-					android:layout_centerVertical="false"
-					android:background="#6192FF"
-					android:gravity="center"
-					android:text="本次服药"
-					android:textColor="#ffffff"
-					android:textSize="18sp"
-					android:visibility="gone" />
-
 			</RelativeLayout>
 
 			<RelativeLayout
@@ -553,6 +553,18 @@
 				android:layout_marginBottom="20dp"
 				android:background="@color/white"
 				android:visibility="gone">
+
+				<TextView
+					android:id="@+id/hint4"
+					android:layout_width="match_parent"
+					android:layout_height="50dp"
+					android:layout_centerVertical="false"
+					android:background="#6192FF"
+					android:gravity="center"
+					android:text="本次服药"
+					android:textColor="#ffffff"
+					android:textSize="18sp"
+					android:visibility="gone" />
 
 				<TextView
 					android:id="@+id/alarm4"
@@ -576,18 +588,6 @@
 					android:paddingRight="10dp"
 					android:textColor="#77FFF7" />
 
-				<TextView
-					android:id="@+id/hint4"
-					android:layout_width="match_parent"
-					android:layout_height="50dp"
-					android:layout_centerVertical="false"
-					android:background="#6192FF"
-					android:gravity="center"
-					android:text="本次服药"
-					android:textColor="#ffffff"
-					android:textSize="18sp"
-					android:visibility="gone" />
-
 			</RelativeLayout>
 
 			<RelativeLayout
@@ -597,6 +597,18 @@
 				android:layout_marginBottom="20dp"
 				android:background="@color/white"
 				android:visibility="gone">
+
+				<TextView
+					android:id="@+id/hint5"
+					android:layout_width="match_parent"
+					android:layout_height="50dp"
+					android:layout_centerVertical="false"
+					android:background="#6192FF"
+					android:gravity="center"
+					android:text="本次服药"
+					android:textColor="#ffffff"
+					android:textSize="18sp"
+					android:visibility="gone" />
 
 				<TextView
 					android:id="@+id/alarm5"
@@ -621,18 +633,6 @@
 					android:checked="false"
 					android:paddingRight="10dp"
 					android:textColor="#77FFF7" />
-
-				<TextView
-					android:id="@+id/hint5"
-					android:layout_width="match_parent"
-					android:layout_height="50dp"
-					android:layout_centerVertical="false"
-					android:background="#6192FF"
-					android:gravity="center"
-					android:text="本次服药"
-					android:textColor="#ffffff"
-					android:textSize="18sp"
-					android:visibility="gone" />
 
 			</RelativeLayout>
 
